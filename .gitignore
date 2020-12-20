@@ -34,5 +34,6 @@ build/
 
 ### Other ###
 /config/
+/logs/
 .DS_Store
 */.DS_Store
