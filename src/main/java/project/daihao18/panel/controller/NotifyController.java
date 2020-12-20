@@ -104,7 +104,7 @@ public class NotifyController {
                     // 查询用户当前套餐
                     Order currentPlan = orderService.getCurrentPlan(order.getUserId());
                     // 查询是否新用户
-                    int buyCount = orderService.getBuyCountByBuyerId(params.get("buyer_id"));
+                    int buyCount = orderService.getBuyCountByUserId(order.getUserId());
                     Boolean isNewPayer = buyCount == 0;
                     // 更新订单
                     if (orderService.updateFinishedOrder(order.getIsMixedPay(), order.getMixedMoneyAmount(), order.getMixedPayAmount(), "支付宝", params.get("buyer_id"), isNewPayer, params.get("trade_no"), DateUtil.parse(params.get("gmt_payment")), PayStatusEnum.SUCCESS.getStatus(), order.getId())) {

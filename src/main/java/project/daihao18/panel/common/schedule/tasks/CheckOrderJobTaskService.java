@@ -87,7 +87,7 @@ public class CheckOrderJobTaskService {
                         // 查询用户当前套餐
                         Order currentPlan = orderService.getCurrentPlan(existOrder.getUserId());
                         // 查询是否新用户
-                        int buyCount = orderService.getBuyCountByBuyerId(response.getBuyerUserId());
+                        int buyCount = orderService.getBuyCountByUserId(existOrder.getUserId());
                         Boolean isNewPayer = buyCount == 0;
                         // 更新订单
                         if (orderService.updateFinishedOrder(existOrder.getIsMixedPay(), existOrder.getMixedMoneyAmount(), existOrder.getMixedPayAmount(), "支付宝", response.getBuyerUserId(), isNewPayer, response.getTradeNo(), response.getSendPayDate(), PayStatusEnum.SUCCESS.getStatus(), existOrder.getId())) {

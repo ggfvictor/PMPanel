@@ -132,9 +132,9 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
-    public int getBuyCountByBuyerId(String buyer_id) {
+    public int getBuyCountByUserId(Integer userId) {
         QueryWrapper<Order> orderQueryWrapper = new QueryWrapper<>();
-        orderQueryWrapper.eq("payer", buyer_id);
+        orderQueryWrapper.eq("user_id", userId).in("status", 1, 3);
         return this.count(orderQueryWrapper);
     }
 
