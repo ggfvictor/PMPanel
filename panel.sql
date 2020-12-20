@@ -497,7 +497,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 INSERT INTO `panel`.`config`(`id`, `name`, `value`) VALUES (1, 'siteName', 'PMPanel');
 INSERT INTO `panel`.`config`(`id`, `name`, `value`) VALUES (2, 'siteUrl', 'http://127.0.0.1');
 INSERT INTO `panel`.`config`(`id`, `name`, `value`) VALUES (3, 'subUrl', 'http://127.0.0.1');
-INSERT INTO `panel`.`config`(`id`, `name`, `value`) VALUES (4, 'regEnable', 'false');
+INSERT INTO `panel`.`config`(`id`, `name`, `value`) VALUES (4, 'regEnable', 'true');
 INSERT INTO `panel`.`config`(`id`, `name`, `value`) VALUES (5, 'inviteOnly', 'false');
 INSERT INTO `panel`.`config`(`id`, `name`, `value`) VALUES (6, 'mailRegEnable', 'false');
 INSERT INTO `panel`.`config`(`id`, `name`, `value`) VALUES (7, 'mailLimit', '10');
