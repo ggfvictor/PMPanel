@@ -244,4 +244,15 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         Map<String, Object> map = this.getMap(orderQueryWrapper);
         return ObjectUtil.isNotEmpty(map) ? new BigDecimal(map.get("total").toString()).setScale(2, BigDecimal.ROUND_HALF_UP) : BigDecimal.ZERO;
     }
+
+    @Override
+    public Object getTodayNewOrderCount() {
+        Date now = new Date();
+        QueryWrapper<Order> orderQueryWrapper = new QueryWrapper<>();
+        orderQueryWrapper
+                .eq("is_new_payer", 1)
+                .eq("status", 1)
+                .gt("pay_time", DateUtil.beginOfDay(now));
+        return this.count(orderQueryWrapper);
+    }
 }

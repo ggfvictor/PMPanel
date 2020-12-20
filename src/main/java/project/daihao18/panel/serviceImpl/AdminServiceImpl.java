@@ -92,12 +92,16 @@ public class AdminServiceImpl implements AdminService {
     public Result getDashboardInfo() {
         Map<String, Object> map = new HashMap<>();
         // TODO 获取待办工单数量
+        // 获取在线节点信息
+        map.put("nodeCount", ssNodeService.count());
+        map.put("offlineCount", ssNodeService.count(new QueryWrapper<SsNode>().lt("node_heartbeat", new Date().getTime() / 1000 - 120)));
         // 获取用户数
         map.put("userCount", userService.count());
         map.put("todayRegisterCount", userService.getRegisterCountByDateToNow(DateUtil.beginOfDay(new Date())));
         // 获取收入
         map.put("monthIncome", orderService.getMonthIncome());
         map.put("todayIncome", orderService.getTodayIncome());
+        map.put("todayNewOrderCount", orderService.getTodayNewOrderCount());
         return Result.ok().data(map);
     }
 
