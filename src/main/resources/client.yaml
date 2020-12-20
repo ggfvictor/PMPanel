@@ -1,0 +1,60 @@
+# 松鼠客户端
+client:
+  # API 地址
+  base_url: https://api.954581.com
+  # Clash 的 Proxy名称
+  subecribe_rule: 🔰国外流量
+
+  # 启动图和跳转url
+  bootstrap_show: 0
+  bootstrap_img: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572070885179&di=4268bebc52072ff6fbef356d97bb3653&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01b828567bb59e6ac725ad905b2da8.png%402o.png
+  bootstrap_url: http://baidu.com
+
+  # android的公告
+  title: 最新公告
+  content: 1.最新官网 https://shawshank.app<br>2.请更新节点,务必保持最新<br>3.节点不可用或者网速慢,请更换其他节点使用<br>
+  broad_url:
+  broad_show: true
+
+  # android的版本
+  version_code: 401
+  description: 版本更新
+  download: https://bytletransfer.lanzous.com/iKyJqjfqkza
+
+  # pc的公告
+  pc_anno_show: true
+  pc_anno_title: 最新公告
+  pc_anno_content: 1.最新官网 https://shawshank.app<br>2.请更新节点,务必保持最新<br>3.节点不可用或者网速慢,请更换其他节点使用<br>
+
+  # pc的版本
+  pc_update_version_code: 202
+  pc_update_description: 版本更新
+  pc_update_download: https://bytletransfer.lanzous.com/ilzJLjftmza
+  pc_update_download_mac: https://bytletransfer.lanzous.com/iRcNxjfqo1a
+
+  bootstrap:
+    width: 1200
+    height: 800
+
+  nav[0]:
+    desc: 最新官网
+    color: "#6777ef"
+    link: /dashboard
+  nav[1]:
+    desc: 购买套餐
+    color: "#6777ef"
+    link: /plan/index
+  nav[2]:
+    desc: 邀请返利
+    color: "#ffa426"
+    link: /funds
+
+  levelDesc:
+    l0: 已过期
+    l1: 黄金会员
+    l2: 铂金会员
+    l3: 钻石会员
+
+  holdConnect: true
+  userinfo_frq: 60
+  onlineinfo_frq: 180
