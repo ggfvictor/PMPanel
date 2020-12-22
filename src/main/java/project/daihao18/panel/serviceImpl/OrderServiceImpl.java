@@ -246,6 +246,16 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
     }
 
     @Override
+    public Object getTodayOrderCount() {
+        Date now = new Date();
+        QueryWrapper<Order> orderQueryWrapper = new QueryWrapper<>();
+        orderQueryWrapper
+                .eq("status", 1)
+                .gt("pay_time", DateUtil.beginOfDay(now));
+        return this.count(orderQueryWrapper);
+    }
+
+    @Override
     public Object getTodayNewOrderCount() {
         Date now = new Date();
         QueryWrapper<Order> orderQueryWrapper = new QueryWrapper<>();
