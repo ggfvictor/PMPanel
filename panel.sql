@@ -183,7 +183,7 @@ CREATE TABLE `order` (
   `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '订单创建时间',
   `expire` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '支付后到期时间',
   `pay_time` datetime DEFAULT NULL COMMENT '支付时间',
-  `trade_no` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT '支付系统订单号',
+  `trade_no` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT '支付系统订单号',
   `status` int DEFAULT '0' COMMENT '是否支付',
   `user_details` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT '用户购买时用户详情',
   `plan_details` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT '用户购买时套餐详情',
