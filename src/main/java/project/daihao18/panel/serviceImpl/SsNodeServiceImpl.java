@@ -49,7 +49,8 @@ public class SsNodeServiceImpl extends ServiceImpl<SsNodeMapper, SsNode> impleme
         QueryWrapper<SsNode> ssNodeQueryWrapper = new QueryWrapper<>();
         ssNodeQueryWrapper
                 .eq("type", 1)
-                .in("sort", 0, 11);// ss or ssr or v2ray
+                .in("sort", 0, 11)// ss or ssr or v2ray
+                .orderByAsc("name");
         return this.list(ssNodeQueryWrapper);
     }
 
